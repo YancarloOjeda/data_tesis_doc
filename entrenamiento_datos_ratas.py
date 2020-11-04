@@ -13,6 +13,7 @@ plt.ion()
 import re
 from scipy import stats
 
+#%%-- Variables 
 sujetos = 10 
 sesiones = 10
 total_PRE_Ax = np.zeros((sujetos, sesiones))
@@ -33,6 +34,8 @@ total_DURANTE_A4x = np.zeros((sujetos, sesiones))
 total_PRE_A8x = np.zeros((sujetos, sesiones))
 total_DURANTE_A8x = np.zeros((sujetos, sesiones))
 
+
+#%%
 def sorted_aphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
     alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ] 
@@ -334,6 +337,7 @@ for elemento in contenido_A8x:
         l = 0
         
         
+#%%----Análisis de datos----------------------------------------
         
 print(total_PRE_A2x)
 print(total_DURANTE_A2x)
@@ -409,6 +413,7 @@ elevacion_A8x = total_DURANTE_A8x - total_PRE_A8x
 elevacion_A8x_promedio = np.sum(elevacion_A8x, axis=0)/10
 error_elevacion_A8x = stats.sem(elevacion_A8x, axis=0, ddof=0)
 
+#%%------Gráficos-------------------------------------------------
 
 x = np.arange(.99, 10.01)
 fig, ax = plt.subplots()
