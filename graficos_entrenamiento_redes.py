@@ -13,7 +13,7 @@ import re
 import matplotlib.pyplot as plt
 
 #%%-----Load DB----------------------------------------------------------------
-ubicacion_BD = "C:/Users/yanoj/OneDrive/Documentos/simulacion/con ITI/datos_filtrados_entrenamiento/PROMEDIOS_total_.csv"
+ubicacion_BD = "C:/Users/yanoj/OneDrive/Documentos/simulacion/con ITI/datos_filtrados_entrenamiento/PROMEDIOS_total_entrenamiento.csv"
 
 datos = pd.read_csv(ubicacion_BD, sep = ',', engine='python', keep_default_na=False, na_values=[' '])
 
@@ -110,10 +110,10 @@ plt.title(u'A1x', position=(0.15, 0.8),
                     'size': 20})
 plt.yticks(fontsize=13, weight='bold') 
 plt.xticks(fontsize=13, weight='bold')
-plt.ylabel('Activaciones\n promedio', fontdict={'family': 'Arial', 
+plt.ylabel("Activaciones promedio\n Unidad $M'$", fontdict={'family': 'Arial', 
                     'color' : 'k',
                     'weight': 'bold',
-                    'size': 24})
+                    'size': 20})
 plt.xlabel('Ensayos', fontdict={'family': 'Arial', 
                     'color' : 'k',
                     'weight': 'bold',
